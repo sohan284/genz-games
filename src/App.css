@@ -1,0 +1,228 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.gamepage {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+iframe {
+  width: 1400px;
+  height: 800px;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.board-row {
+  display: flex;
+  gap: 5px;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  background: #00365a;
+  border: 2px solid #999;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.square:hover {
+  background: #717f8a;
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.game-controls {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.mode-button,
+.reset-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.mode-button:hover,
+.reset-button:hover {
+  background-color: #45a049;
+}
+
+.mode-indicator {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.reset-button {
+  background-color: #f44336;
+}
+
+.reset-button:hover {
+  background-color: #da190b;
+}
+
+.game-selector {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.game-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.game-button:hover {
+  background-color: #45a049;
+}
+
+.game-button.active {
+  background-color: #2e7d32;
+  font-weight: bold;
+}
+
+.ludo-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ludo-board {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #333;
+  margin: 20px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.piece {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.piece:hover {
+  transform: scale(1.1);
+}
+
+.piece.red {
+  background-color: #ff4444;
+}
+
+.piece.green {
+  background-color: #4caf50;
+}
+
+.piece.yellow {
+  background-color: #ffeb3b;
+}
+
+.piece.blue {
+  background-color: #2196f3;
+}
+
+.game-info {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.dice-button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.dice-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

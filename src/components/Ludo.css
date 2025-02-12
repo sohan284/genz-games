@@ -1,0 +1,231 @@
+.ludo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.ludo-game {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+  font-size: 1.2em;
+}
+
+.player-turn {
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.player-turn.red {
+  background-color: #ebfffc;
+  color: #d32f2f;
+}
+.player-turn.green {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+.player-turn.yellow {
+  background-color: #fffde7;
+  color: #fbc02d;
+}
+.player-turn.blue {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.ludo-board {
+  background: #f5f5f5;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.piece {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.piece:hover {
+  transform: scale(1.1);
+}
+
+.piece.active {
+  animation: pulse 1s infinite;
+}
+
+.piece.red {
+  background-color: #f44336;
+}
+.piece.green {
+  background-color: #4caf50;
+}
+.piece.yellow {
+  background-color: #ffc107;
+}
+.piece.blue {
+  background-color: #2196f3;
+}
+
+.safe-spot {
+  background: #e0e0e0;
+  border-radius: 50%;
+}
+
+.red-home {
+  background-color: #ffebee;
+}
+.green-home {
+  background-color: #e8f5e9;
+}
+.yellow-home {
+  background-color: #fffde7;
+}
+.blue-home {
+  background-color: #e3f2fd;
+}
+
+.red-path {
+  background-color: #ffcdd2;
+}
+.green-path {
+  background-color: #c8e6c9;
+}
+.yellow-path {
+  background-color: #fff9c4;
+}
+.blue-path {
+  background-color: #bbdefb;
+}
+
+.game-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.dice-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.current-player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.player-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.player-indicator.red {
+  background-color: #f44336;
+}
+.player-indicator.green {
+  background-color: #4caf50;
+}
+.player-indicator.yellow {
+  background-color: #ffc107;
+}
+.player-indicator.blue {
+  background-color: #2196f3;
+}
+
+.winner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.winner-message {
+  padding: 30px 60px;
+  border-radius: 10px;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.winner-message.red {
+  background-color: #f44336;
+  color: white;
+}
+.winner-message.green {
+  background-color: #4caf50;
+  color: white;
+}
+.winner-message.yellow {
+  background-color: #ffc107;
+  color: black;
+}
+.winner-message.blue {
+  background-color: #2196f3;
+  color: white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dice-button {
+  display: none;
+}

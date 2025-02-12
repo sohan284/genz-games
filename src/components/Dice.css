@@ -1,0 +1,123 @@
+.dice-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 20px auto;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.dice {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transition: transform 0.1s;
+}
+
+.dice:hover:not(.disabled) {
+  transform: scale(1.1);
+}
+
+.dice.rolling {
+  animation: roll 1s ease-out;
+}
+
+.dice.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dice-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.dice-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #333;
+  border-radius: 50%;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Dot positions */
+.center {
+  align-self: center;
+}
+.top-left {
+  align-self: flex-start;
+}
+.top-right {
+  align-self: flex-start;
+}
+.middle-left {
+  align-self: center;
+}
+.middle-right {
+  align-self: center;
+}
+.bottom-left {
+  align-self: flex-end;
+}
+.bottom-right {
+  align-self: flex-end;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  30% {
+    transform: rotateX(240deg) rotateY(240deg) rotateZ(240deg);
+  }
+  60% {
+    transform: rotateX(480deg) rotateY(480deg) rotateZ(480deg);
+  }
+  100% {
+    transform: rotateX(720deg) rotateY(720deg) rotateZ(720deg);
+  }
+}
+
+/* Add hover effect for the container */
+.dice-container:hover .dice:not(.disabled) {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Add pressed effect */
+.dice-container:active .dice:not(.disabled) {
+  transform: scale(0.95);
+}
+
+/* Add shine effect */
+.dice::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  border-radius: 10px;
+}
+
+/* Add depth effect to dots */
+.dice-dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
